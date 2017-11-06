@@ -65,8 +65,7 @@ void setup(){
     osc[7].SetTrim(TRIM_AL);
     osc[8].SetTrim(TRIM_H);
 
-    //ninuninu();
-    walk(6, 3000);
+    ninuninu();
 
 }
 
@@ -79,19 +78,19 @@ void loop()
         Serial.println(input);
         switch(input){
             case 'A':
-                walk(1, 750);
+                walk(1, 950);
                 break;
 
             case 'B':
-                turnR(1, 800);
+                turnR(1, 950);
                 break;
 
             case 'C':
-                backward(1, 800);
+                backward(1, 950);
                 break;
 
             case 'D':
-                turnL(1, 800);
+                turnL(1, 950);
                 break;
 
             case 'E':
@@ -168,7 +167,7 @@ void oscillate(int A[N_OSC], int O[N_OSC], int T, double phase_diff[N_OSC]){
 }
 
 void walk(int steps, int T){
-    int A[8]= {15, 15, 0, 22, 20, 20, 15, 15};
+    int A[8]= {15, 15, 19, 22, 20, 20, 15, 15};
     int O[8] = {0, 0, 0, 0, -60, 60, -30, 30};
     double phase_diff[8] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90),
                             DEG2RAD(270), DEG2RAD(270), DEG2RAD(0), DEG2RAD(0)};
@@ -177,7 +176,7 @@ void walk(int steps, int T){
 }
 
 void turnL(int steps, int T){
-    int A[8]= {15, 15, 10, 30, 20, 20, 15, 15};
+    int A[8]= {15, 15, 15, 24, 20, 20, 15, 15};
     int O[8] = {0, 0, 0, 0, -60, 60, -30, 30};
     double phase_diff[8] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90),
                             DEG2RAD(270), DEG2RAD(270), DEG2RAD(0), DEG2RAD(0)};
@@ -186,7 +185,7 @@ void turnL(int steps, int T){
 }
 
 void turnR(int steps, int T){
-    int A[8]= {15, 15, 30, 10, 20, 20, 15, 15};
+    int A[8]= {15, 15, 23, 17, 20, 20, 15, 15};
     int O[8] = {0, 0, 0, 0, -60, 60, -30, 30};
     double phase_diff[8] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90),
                             DEG2RAD(270), DEG2RAD(270), DEG2RAD(0), DEG2RAD(0)};
